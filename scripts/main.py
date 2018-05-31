@@ -14,6 +14,7 @@ data = tc.image_analysis.load_images('dataset/images', with_path=True)
 # the data is in no particular order, so we have to loop it to match
 annotations, labels = [], []
 for j, item in enumerate(data):
+    found = False
     for i, row in csv.iterrows():
         if str(row['image']) == str(os.path.split(item['path'])[1]):
             height = csv.iat[i, 6] - csv.iat[i, 5]
@@ -22,7 +23,11 @@ for j, item in enumerate(data):
             props['coordinates'] = {'height': height, 'width': width, 'x': csv.iat[i, 3] + math.floor(width / 2), 'y': csv.iat[i, 5] + math.floor(height / 2)}
             labels.append(row['label'])
             annotations.append([props])
+            found = True
             break
+    if found == False:
+    	annotations.append([])
+    	labels.append('')
 
 # make an array from labels and annotations, matching the data order
 data['annotations'] = SArray(data=annotations, dtype=list)
