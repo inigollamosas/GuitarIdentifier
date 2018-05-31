@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		6AFC653720BEE32300765C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC653620BEE32300765C92 /* AppDelegate.swift */; };
-		6AFC653920BEE32300765C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC653820BEE32300765C92 /* ViewController.swift */; };
+		6AFC653920BEE32300765C92 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC653820BEE32300765C92 /* CameraViewController.swift */; };
 		6AFC653C20BEE32300765C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653A20BEE32300765C92 /* Main.storyboard */; };
 		6AFC653E20BEE32500765C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653D20BEE32500765C92 /* Assets.xcassets */; };
-		6AFC654120BEE32500765C92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653F20BEE32500765C92 /* LaunchScreen.storyboard */; };
+		6AFC654920BEE4F600765C92 /* CameraViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC654820BEE4F600765C92 /* CameraViewControllerHelper.swift */; };
+		6AFC654B20BF21BA00765C92 /* GuitarClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC654A20BF21BA00765C92 /* GuitarClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6AFC653320BEE32300765C92 /* GuitarIdentifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarIdentifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFC653620BEE32300765C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6AFC653820BEE32300765C92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6AFC653820BEE32300765C92 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		6AFC653B20BEE32300765C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AFC653D20BEE32500765C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6AFC654020BEE32500765C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AFC654220BEE32500765C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AFC654820BEE4F600765C92 /* CameraViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewControllerHelper.swift; sourceTree = "<group>"; };
+		6AFC654A20BF21BA00765C92 /* GuitarClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GuitarClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,12 @@
 		6AFC653520BEE32300765C92 /* GuitarIdentifier */ = {
 			isa = PBXGroup;
 			children = (
+				6AFC654A20BF21BA00765C92 /* GuitarClassifier.mlmodel */,
 				6AFC653620BEE32300765C92 /* AppDelegate.swift */,
-				6AFC653820BEE32300765C92 /* ViewController.swift */,
+				6AFC653820BEE32300765C92 /* CameraViewController.swift */,
 				6AFC653A20BEE32300765C92 /* Main.storyboard */,
+				6AFC654820BEE4F600765C92 /* CameraViewControllerHelper.swift */,
 				6AFC653D20BEE32500765C92 /* Assets.xcassets */,
-				6AFC653F20BEE32500765C92 /* LaunchScreen.storyboard */,
 				6AFC654220BEE32500765C92 /* Info.plist */,
 			);
 			path = GuitarIdentifier;
@@ -122,7 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AFC654120BEE32500765C92 /* LaunchScreen.storyboard in Resources */,
 				6AFC653E20BEE32500765C92 /* Assets.xcassets in Resources */,
 				6AFC653C20BEE32300765C92 /* Main.storyboard in Resources */,
 			);
@@ -135,7 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AFC653920BEE32300765C92 /* ViewController.swift in Sources */,
+				6AFC653920BEE32300765C92 /* CameraViewController.swift in Sources */,
+				6AFC654B20BF21BA00765C92 /* GuitarClassifier.mlmodel in Sources */,
+				6AFC654920BEE4F600765C92 /* CameraViewControllerHelper.swift in Sources */,
 				6AFC653720BEE32300765C92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,14 +153,6 @@
 				6AFC653B20BEE32300765C92 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6AFC653F20BEE32500765C92 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6AFC654020BEE32500765C92 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
