@@ -37,10 +37,10 @@ This is an iOS app that identifies three basic guitar types: Stratocaster, Telec
 
 This is a list of the platform and the software versions I installed for creating the mlmodel and running the app.
 
-macOS 10.13
-python 2.7
-Turi Create 4.3.2
-ChromeDriver 2.39
-simple_image_annotator and googleimagesdownload dont have a release version
-iOS 11.4
-Xcode 9.4
+* macOS 10.13
+* python 2.7
+* Turi Create 4.3.2
+* ChromeDriver 2.39
+* simple_image_annotator and googleimagesdownload dont have a release version
+* iOS 11.4
+* Xcode 9.4
