@@ -1,24 +1,16 @@
 # Guitar classifier app
 
-<style>
-  .column {
-    float: left;
-    padding: 5px;
-  }
-</style>
-
 <div>
-  <div class="column">
+  <div style="float: left; padding: 5px;">
     <img src="strat.jpeg" alt="Stratocaster">
   </div>
-  <div class="column">
+  <div style="float: left; padding: 5px;">
     <img src="tele.jpeg" alt="Telecaster">
   </div>
-  <div class="column">
+  <div style="float: left; padding: 5px;">
     <img src="lp.jpeg" alt="Les Paul">
   </div>
 </div>
-
 
 ## Description
 
