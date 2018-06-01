@@ -1,13 +1,13 @@
 # Guitar classifier app
 
 <div>
-  <div style="float: left; padding: 5px;">
+  <div style="float: left; padding: 5px; max-width:33%;">
     <img src="strat.jpeg" alt="Stratocaster">
   </div>
-  <div style="float: left; padding: 5px;">
+  <div style="float: left; padding: 5px; max-width:33%;">
     <img src="tele.jpeg" alt="Telecaster">
   </div>
-  <div style="float: left; padding: 5px;">
+  <div style="float: left; padding: 5px; max-width:33%;">
     <img src="lp.jpeg" alt="Les Paul">
   </div>
 </div>
