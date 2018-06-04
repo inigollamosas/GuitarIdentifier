@@ -1,9 +1,9 @@
 import turicreate as tc
 from turicreate import SArray
 import pandas as pd
-import os
-import sys
-import math
+import os, sys, math, time, datetime
+
+start = time.time()
 
 # Load images info from the googleimagesdownload output file
 csv = pd.read_csv('images-data.csv', names = ["image", "id", "label", "xMin", "xMax", "yMin", "yMax"])
@@ -34,18 +34,19 @@ data['annotations'] = SArray(data=annotations, dtype=list)
 data['label'] = SArray(data=labels)
 
 # Explore interactively
-data['image_with_ground_truth'] = tc.object_detector.util.draw_bounding_boxes(data["image"], data["annotations"])
-data.explore()
+# data['image_with_ground_truth'] = tc.object_detector.util.draw_bounding_boxes(data["image"], data["annotations"])
+# data.explore()
 
 # Make a train-test split
-train_data, test_data = data.random_split(0.8)
+train_data, test_data = data.random_split(0.9)
 
 # Create a model
 model = tc.object_detector.create(train_data, feature='image', annotations='annotations', max_iterations=1000)
 
 # Mean average Precision
 scores = model.evaluate(test_data)
-print(scores['mean_average_precision'])
 
 # Export for use in Core ML
 model.export_coreml('GuitarClassifier.mlmodel')
+
+print 'Total time: ', str(datetime.timedelta(seconds=int(round(time.time() - start)))), ', Accuracy: ', scores['mean_average_precision']
