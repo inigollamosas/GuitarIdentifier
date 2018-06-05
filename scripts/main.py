@@ -9,7 +9,7 @@ start = time.time()
 csv = pd.read_csv('images-data.csv', names = ["image", "id", "label", "xMin", "xMax", "yMin", "yMax"])
 
 # Load images
-data = tc.image_analysis.load_images('dataset/images', with_path=True)
+data = tc.image_analysis.load_images('images', with_path=True)
 
 # the data is in no particular order, so we have to loop it to match
 annotations, labels = [], []
@@ -21,7 +21,7 @@ for j, item in enumerate(data):
             width = csv.iat[i, 4] - csv.iat[i, 3]
             props = {'label': csv.iat[i, 2], 'type': 'rectangle'}
             props['coordinates'] = {'height': height, 'width': width, 'x': csv.iat[i, 3] + math.floor(width / 2), 'y': csv.iat[i, 5] + math.floor(height / 2)}
-            labels.append(row['label'])
+            labels.append(str(row['label']))
             annotations.append([props])
             found = True
             break
@@ -41,7 +41,7 @@ data['label'] = SArray(data=labels)
 train_data, test_data = data.random_split(0.9)
 
 # Create a model
-model = tc.object_detector.create(train_data, feature='image', annotations='annotations', max_iterations=1000)
+model = tc.object_detector.create(train_data, feature='image', annotations='annotations', max_iterations=2000)
 
 # Mean average Precision
 scores = model.evaluate(test_data)
