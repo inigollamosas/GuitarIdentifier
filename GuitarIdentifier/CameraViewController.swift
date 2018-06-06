@@ -102,10 +102,11 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             fatalError("unexpected result type from VNCoreMLRequest")
         }
         let indentifiedObjects = CameraViewControllerHelper.indentifyLabels(observations: observations, nmsThreshold: nmsThreshold)
-        
+
         DispatchQueue.main.async {
         self.cameraLayer.sublayers?.removeSubrange(1...)
             for object in indentifiedObjects {
+                print(self.labels[object.labelIndex])
                 self.cameraLayer.addSublayer(CameraViewControllerHelper.frameObject(object, self.cameraView.frame, self.labelColors[object.labelIndex], self.labels[object.labelIndex]))
             }
         }

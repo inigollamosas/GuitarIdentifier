@@ -33,6 +33,12 @@ This is an iOS app that identifies three basic guitar types: Stratocaster, Telec
 
 * Open the app on xcode. Drag the mlmodel file to the project folder and run it. It uses the camera therefore needs to run on a real device
 
+## Running it with GPU
+
+When running Neural Networks to create mlmodel files with turicreate, running it on GPU is several factos faster than doing it on CPU (in my case 6x faster). If you dont own a machine where turicreate can be run on a GPU, I strongly suggest to run the scripts on a cloud instance. I followed this tutorial for EC2 instances on AWS:
+
+https://www.pyimagesearch.com/2017/09/20/pre-configured-amazon-aws-deep-learning-ami-with-python/
+
 ## System requirements
 
 This is a list of the platform and the software versions I installed for creating the mlmodel and running the app.

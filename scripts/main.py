@@ -49,4 +49,4 @@ scores = model.evaluate(test_data)
 # Export for use in Core ML
 model.export_coreml('GuitarClassifier.mlmodel')
 
-print 'Total time: ', str(datetime.timedelta(seconds=int(round(time.time() - start)))), ', Accuracy: ', scores['mean_average_precision']
+print('Total time: ', str(datetime.timedelta(seconds=int(round(time.time() - start)))), ', Accuracy: ', scores['mean_average_precision'])
