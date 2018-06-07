@@ -34,7 +34,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         return session
     }()
     
-    private var classifier = GuitarClassifier()
+    private var classifier = ObjectDetector()
     
     var userDefined: [String: String] = [:]
     var labels: [String] = []
