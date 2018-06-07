@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A23693920C94EEA0038393B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23693820C94EEA0038393B /* PhotoViewController.swift */; };
 		6A96D3E220C814B8001C027A /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D3E020C814B8001C027A /* ImageClassifier.mlmodel */; };
 		6A96D3E320C814B8001C027A /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D3E120C814B8001C027A /* ObjectDetector.mlmodel */; };
+		6A96D40C20C92660001C027A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D40A20C92660001C027A /* File.swift */; };
+		6A96D40D20C92660001C027A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D40B20C92660001C027A /* Utilities.swift */; };
+		6A96D40F20C931CD001C027A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D40E20C931CD001C027A /* MainViewController.swift */; };
 		6AFC653720BEE32300765C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC653620BEE32300765C92 /* AppDelegate.swift */; };
-		6AFC653920BEE32300765C92 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC653820BEE32300765C92 /* CameraViewController.swift */; };
+		6AFC653920BEE32300765C92 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC653820BEE32300765C92 /* VideoViewController.swift */; };
 		6AFC653C20BEE32300765C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653A20BEE32300765C92 /* Main.storyboard */; };
 		6AFC653E20BEE32500765C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653D20BEE32500765C92 /* Assets.xcassets */; };
 		6AFC654920BEE4F600765C92 /* CameraViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC654820BEE4F600765C92 /* CameraViewControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A23693820C94EEA0038393B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		6A96D3E020C814B8001C027A /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		6A96D3E120C814B8001C027A /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		6A96D40A20C92660001C027A /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		6A96D40B20C92660001C027A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		6A96D40E20C931CD001C027A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6AFC653320BEE32300765C92 /* GuitarIdentifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarIdentifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFC653620BEE32300765C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6AFC653820BEE32300765C92 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		6AFC653820BEE32300765C92 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		6AFC653B20BEE32300765C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AFC653D20BEE32500765C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AFC654220BEE32500765C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,11 +69,15 @@
 				6A96D3E020C814B8001C027A /* ImageClassifier.mlmodel */,
 				6A96D3E120C814B8001C027A /* ObjectDetector.mlmodel */,
 				6AFC653620BEE32300765C92 /* AppDelegate.swift */,
-				6AFC653820BEE32300765C92 /* CameraViewController.swift */,
+				6AFC653820BEE32300765C92 /* VideoViewController.swift */,
 				6AFC653A20BEE32300765C92 /* Main.storyboard */,
 				6AFC654820BEE4F600765C92 /* CameraViewControllerHelper.swift */,
+				6A96D40A20C92660001C027A /* File.swift */,
+				6A96D40B20C92660001C027A /* Utilities.swift */,
+				6A96D40E20C931CD001C027A /* MainViewController.swift */,
 				6AFC653D20BEE32500765C92 /* Assets.xcassets */,
 				6AFC654220BEE32500765C92 /* Info.plist */,
+				6A23693820C94EEA0038393B /* PhotoViewController.swift */,
 			);
 			path = GuitarIdentifier;
 			sourceTree = "<group>";
@@ -140,11 +152,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AFC653920BEE32300765C92 /* CameraViewController.swift in Sources */,
+				6AFC653920BEE32300765C92 /* VideoViewController.swift in Sources */,
+				6A96D40C20C92660001C027A /* File.swift in Sources */,
+				6A96D40D20C92660001C027A /* Utilities.swift in Sources */,
 				6AFC654920BEE4F600765C92 /* CameraViewControllerHelper.swift in Sources */,
 				6AFC653720BEE32300765C92 /* AppDelegate.swift in Sources */,
+				6A23693920C94EEA0038393B /* PhotoViewController.swift in Sources */,
 				6A96D3E220C814B8001C027A /* ImageClassifier.mlmodel in Sources */,
 				6A96D3E320C814B8001C027A /* ObjectDetector.mlmodel in Sources */,
+				6A96D40F20C931CD001C027A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

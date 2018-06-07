@@ -19,17 +19,71 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Tuu-4E-LGv" kind="relationship" relationship="rootViewController" id="jxN-MN-scn"/>
+                        <segue destination="gDV-j5-OWg" kind="relationship" relationship="rootViewController" id="qcD-3z-5eF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2c3-aY-Mzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-12945" y="414"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Main View Controller-->
+        <scene sceneID="Vhg-LK-f8y">
+            <objects>
+                <viewController id="gDV-j5-OWg" customClass="MainViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g5w-oU-F6B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAy-sF-wAS">
+                                <rect key="frame" x="167" y="345" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <action selector="photoPressed:" destination="gDV-j5-OWg" eventType="touchUpInside" id="m8u-RH-nR9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHG-Nr-5Su">
+                                <rect key="frame" x="167" y="402" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Video"/>
+                                <connections>
+                                    <action selector="videoPressed:" destination="gDV-j5-OWg" eventType="touchUpInside" id="xyJ-h5-i1V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CYc-Wj-MER"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uuz-4I-Bcg"/>
+                    <connections>
+                        <segue destination="Tuu-4E-LGv" kind="show" identifier="showVideo" id="ySO-GT-1oo"/>
+                        <segue destination="Nvr-5b-OfQ" kind="show" identifier="showPhoto" id="Iio-lQ-6xs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zic-Et-Z1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11878" y="429"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="msR-io-BNW">
+            <objects>
+                <viewController id="Nvr-5b-OfQ" customClass="PhotoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="epG-Og-Qcl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3fB-Fm-8E9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1y-gZ-Blt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10719" y="236"/>
+        </scene>
+        <!--Video View Controller-->
         <scene sceneID="ihG-6e-bzj">
             <objects>
-                <viewController id="Tuu-4E-LGv" customClass="CameraViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b45-JQ-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Tuu-4E-LGv" customClass="VideoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8JP-Wp-D0q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,9 +107,8 @@
                         <outlet property="cameraView" destination="9Oi-8H-i1Q" id="kCe-bv-Kwi"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b45-JQ-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11076" y="388"/>
+            <point key="canvasLocation" x="-10719" y="927"/>
         </scene>
     </scenes>
 </document>
