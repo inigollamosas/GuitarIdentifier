@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A23693920C94EEA0038393B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23693820C94EEA0038393B /* PhotoViewController.swift */; };
 		6A71963220CA72BF007FDAF0 /* GuitarClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6A71963020CA72BC007FDAF0 /* GuitarClassifier.mlmodel */; };
 		6A71963320CA72BF007FDAF0 /* GuitarDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6A71963120CA72BF007FDAF0 /* GuitarDetector.mlmodel */; };
+		6A71963820CA759F007FDAF0 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71963720CA759F007FDAF0 /* PhotoViewController.swift */; };
 		6A96D40C20C92660001C027A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D40A20C92660001C027A /* File.swift */; };
 		6A96D40D20C92660001C027A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D40B20C92660001C027A /* Utilities.swift */; };
 		6A96D40F20C931CD001C027A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A96D40E20C931CD001C027A /* MainViewController.swift */; };
@@ -21,9 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A23693820C94EEA0038393B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		6A71963020CA72BC007FDAF0 /* GuitarClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GuitarClassifier.mlmodel; sourceTree = "<group>"; };
 		6A71963120CA72BF007FDAF0 /* GuitarDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GuitarDetector.mlmodel; sourceTree = "<group>"; };
+		6A71963720CA759F007FDAF0 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		6A96D40A20C92660001C027A /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		6A96D40B20C92660001C027A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6A96D40E20C931CD001C027A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			children = (
 				6AFC653820BEE32300765C92 /* VideoViewController.swift */,
 				6A96D40E20C931CD001C027A /* MainViewController.swift */,
-				6A23693820C94EEA0038393B /* PhotoViewController.swift */,
+				6A71963720CA759F007FDAF0 /* PhotoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,12 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AFC653920BEE32300765C92 /* VideoViewController.swift in Sources */,
+				6A71963820CA759F007FDAF0 /* PhotoViewController.swift in Sources */,
 				6A71963220CA72BF007FDAF0 /* GuitarClassifier.mlmodel in Sources */,
 				6A96D40C20C92660001C027A /* File.swift in Sources */,
 				6A96D40D20C92660001C027A /* Utilities.swift in Sources */,
 				6AFC654920BEE4F600765C92 /* ObjectDetector.swift in Sources */,
 				6AFC653720BEE32300765C92 /* AppDelegate.swift in Sources */,
-				6A23693920C94EEA0038393B /* PhotoViewController.swift in Sources */,
 				6A96D40F20C931CD001C027A /* MainViewController.swift in Sources */,
 				6A71963320CA72BF007FDAF0 /* GuitarDetector.mlmodel in Sources */,
 			);

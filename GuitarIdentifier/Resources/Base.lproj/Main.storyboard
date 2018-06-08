@@ -57,32 +57,16 @@
                     <navigationItem key="navigationItem" id="Uuz-4I-Bcg"/>
                     <connections>
                         <segue destination="Tuu-4E-LGv" kind="show" identifier="showVideo" id="ySO-GT-1oo"/>
-                        <segue destination="Nvr-5b-OfQ" kind="show" identifier="showPhoto" id="Iio-lQ-6xs"/>
+                        <segue destination="yt3-f9-yN4" kind="show" identifier="showPhoto" id="RWF-pA-jwB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zic-Et-Z1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-11878" y="429"/>
         </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="msR-io-BNW">
-            <objects>
-                <viewController id="Nvr-5b-OfQ" customClass="PhotoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="epG-Og-Qcl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3fB-Fm-8E9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N1y-gZ-Blt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-10719" y="236"/>
-        </scene>
         <!--Video View Controller-->
         <scene sceneID="ihG-6e-bzj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b45-JQ-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Tuu-4E-LGv" customClass="VideoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8JP-Wp-D0q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -107,8 +91,70 @@
                         <outlet property="cameraView" destination="9Oi-8H-i1Q" id="kCe-bv-Kwi"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b45-JQ-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10719" y="927"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="qFc-VU-8bQ">
+            <objects>
+                <viewController id="yt3-f9-yN4" customClass="PhotoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MFq-xh-YA1"/>
+                        <viewControllerLayoutGuide type="bottom" id="vc5-Fh-0cN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="28f-NI-JeB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="noL-Zo-TjW">
+                                <rect key="frame" x="62" y="421" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="MPb-rr-I8s"/>
+                                    <constraint firstAttribute="width" constant="250" id="sVz-yN-54x"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Vr-hrD">
+                                <rect key="frame" x="62" y="96" width="250" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Q2D-GZ-BRw"/>
+                                    <constraint firstAttribute="width" constant="250" id="Uh8-NC-psr"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
+                                <rect key="frame" x="142" y="354" width="91" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="1eE-6B-e3q"/>
+                                    <constraint firstAttribute="height" constant="30" id="RfV-75-Bsq"/>
+                                </constraints>
+                                <state key="normal" title="Take photo"/>
+                                <connections>
+                                    <action selector="capturePhoto:" destination="yt3-f9-yN4" eventType="touchUpInside" id="dL0-cS-z3e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="noL-Zo-TjW" firstAttribute="centerX" secondItem="28f-NI-JeB" secondAttribute="centerX" id="JDu-Hg-voe"/>
+                            <constraint firstItem="qXf-Vr-hrD" firstAttribute="top" secondItem="MFq-xh-YA1" secondAttribute="bottom" constant="8" id="SSZ-8X-BgS"/>
+                            <constraint firstItem="qXf-Vr-hrD" firstAttribute="centerX" secondItem="28f-NI-JeB" secondAttribute="centerX" id="VFj-ih-cC8"/>
+                            <constraint firstItem="aYP-yc-Bxr" firstAttribute="centerX" secondItem="28f-NI-JeB" secondAttribute="centerX" id="Xpe-wB-OqJ"/>
+                            <constraint firstItem="noL-Zo-TjW" firstAttribute="top" secondItem="aYP-yc-Bxr" secondAttribute="bottom" constant="37" id="tyA-Ef-jYE"/>
+                            <constraint firstItem="aYP-yc-Bxr" firstAttribute="top" secondItem="qXf-Vr-hrD" secondAttribute="bottom" constant="8" id="u3X-5Z-ztX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zyo-9t-WmC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ol1-rl-Ql4"/>
+                    <connections>
+                        <outlet property="capturedImage" destination="noL-Zo-TjW" id="bc2-Az-2cO"/>
+                        <outlet property="photoButton" destination="aYP-yc-Bxr" id="Cri-Ff-wJ1"/>
+                        <outlet property="previewView" destination="qXf-Vr-hrD" id="0DY-Ce-0IV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8EZ-4n-NqJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10706" y="191"/>
         </scene>
     </scenes>
 </document>

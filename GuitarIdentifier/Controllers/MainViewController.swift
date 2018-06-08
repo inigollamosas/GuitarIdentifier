@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var chosenPhoto = UIImageView()
 
@@ -19,25 +19,27 @@ class MainViewController: UIViewController {
     
     @IBAction func photoPressed(_ sender: Any) {
         
-        // Show options for the source picker only if the camera is available.
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            presentPhotoPicker(sourceType: .photoLibrary)
-            return
-        }
+        performSegue(withIdentifier: "showPhoto", sender: nil)
         
-        let photoSourcePicker = UIAlertController()
-        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
-            self.presentPhotoPicker(sourceType: .camera)
-        }
-        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
-            self.presentPhotoPicker(sourceType: .photoLibrary)
-        }
-        
-        photoSourcePicker.addAction(takePhoto)
-        photoSourcePicker.addAction(choosePhoto)
-        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(photoSourcePicker, animated: true)
+//        // Show options for the source picker only if the camera is available.
+//        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+//            presentPhotoPicker(sourceType: .photoLibrary)
+//            return
+//        }
+//
+//        let photoSourcePicker = UIAlertController()
+//        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+//            self.presentPhotoPicker(sourceType: .camera)
+//        }
+//        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+//            self.presentPhotoPicker(sourceType: .photoLibrary)
+//        }
+//
+//        photoSourcePicker.addAction(takePhoto)
+//        photoSourcePicker.addAction(choosePhoto)
+//        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//        present(photoSourcePicker, animated: true)
     }
     
     func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
@@ -47,19 +49,17 @@ class MainViewController: UIViewController {
         present(picker, animated: true)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPhoto" {
-            if let destinationVC = segue.destination as? PhotoViewController {
-                destinationVC.photo = chosenPhoto
-            }
-        }
-    }
-
-}
-
-extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showPhoto" {
+//            if let destinationVC = segue.destination as? PhotoViewController {
+//                destinationVC.photo = chosenPhoto
+//            }
+//        }
+//    }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+//    MARK: - Delegate methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
         chosenPhoto.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         performSegue(withIdentifier: "showPhoto", sender: nil)
