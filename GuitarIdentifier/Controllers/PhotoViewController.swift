@@ -64,6 +64,7 @@ class PhotoViewController: UIViewController  {
                 // Only start the session running if setup succeeded.
                 DispatchQueue.main.async { [unowned self] in
                     self.previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
+                    self.previewLayer.videoGravity = .resizeAspectFill
                     self.previewLayer.frame = self.previewView.bounds
                     self.previewView.layer.addSublayer(self.previewLayer)
                     self.session.startRunning()
