@@ -42,7 +42,7 @@ class PhotoViewController: UIViewController  {
             self.configureSession()
         }
         
-        
+        photoButton.layer.cornerRadius = 10
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(getPhotoFromLibraryPressed))
         
 

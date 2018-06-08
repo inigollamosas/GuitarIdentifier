@@ -106,10 +106,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Vr-hrD">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
-                                <rect key="frame" x="157" y="685" width="104" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
+                                <rect key="frame" x="137.66666666666666" y="668" width="100" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.0064332916308650345" blue="0.038555488229899515" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="U41-w4-704"/>
+                                </constraints>
                                 <state key="normal" image="cameraIcon"/>
                                 <connections>
                                     <action selector="capturePhoto:" destination="yt3-f9-yN4" eventType="touchUpInside" id="dL0-cS-z3e"/>
@@ -118,6 +120,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aYP-yc-Bxr" firstAttribute="centerX" secondItem="28f-NI-JeB" secondAttribute="centerX" id="ECM-g0-JzE"/>
+                            <constraint firstItem="vc5-Fh-0cN" firstAttribute="top" secondItem="aYP-yc-Bxr" secondAttribute="bottom" constant="50" id="EPn-Qh-ntZ"/>
                             <constraint firstItem="qXf-Vr-hrD" firstAttribute="top" secondItem="MFq-xh-YA1" secondAttribute="bottom" id="J0F-A6-adf"/>
                             <constraint firstItem="qXf-Vr-hrD" firstAttribute="leading" secondItem="zyo-9t-WmC" secondAttribute="leading" id="NRD-Sh-vgg"/>
                             <constraint firstItem="qXf-Vr-hrD" firstAttribute="trailing" secondItem="zyo-9t-WmC" secondAttribute="trailing" id="Pcz-wV-QzM"/>
