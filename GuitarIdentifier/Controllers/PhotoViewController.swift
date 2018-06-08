@@ -3,10 +3,10 @@ import AVFoundation
 
 class PhotoViewController: UIViewController  {
     
-    @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var photoButton: UIButton!
     
+    var capturedImage: UIImage?
     let session = AVCaptureSession()
     let photoOutput = AVCapturePhotoOutput()
     let sessionQueue = DispatchQueue(label: "session queue",
@@ -231,6 +231,16 @@ class PhotoViewController: UIViewController  {
         
         photoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto"{
+            if let nc = segue.destination as? UINavigationController {
+                if let vc = nc.viewControllers[0] as? CapturedPhotoViewController{
+                    vc.photo = capturedImage
+                }
+            }
+        }
+    }
 }
 
 extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -238,8 +248,8 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
-        capturedImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
+        capturedImage = (info[UIImagePickerControllerOriginalImage] as! UIImage)
+        performSegue(withIdentifier: "showPhoto", sender: nil)
     }
 }
 
@@ -247,20 +257,19 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 extension PhotoViewController: AVCapturePhotoCaptureDelegate {
     
-    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-        
-        if let error = error {
-            print("Error capturing photo: \(error)")
-        } else {
-            if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
-                
-                if let image = UIImage(data: dataImage) {
-                    self.capturedImage.image = image
-                }
-            }
-        }
-        
-    }
+//    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+//
+//        if let error = error {
+//            print("Error capturing photo: \(error)")
+//        } else {
+//            if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
+//
+//                if let image = UIImage(data: dataImage) {
+//                    self.capturedImage.image = image
+//                }
+//            }
+//        }
+//    }
     
     @available(iOS 11.0, *)
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -269,9 +278,7 @@ extension PhotoViewController: AVCapturePhotoCaptureDelegate {
             let image =  UIImage(data: data)  else {
                 return
         }
-        
-        self.capturedImage.image = image
+        capturedImage = image
+        performSegue(withIdentifier: "showPhoto", sender: nil)
     }
 }
-
-

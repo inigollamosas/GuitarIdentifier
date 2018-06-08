@@ -17,6 +17,7 @@
 		6AFC653C20BEE32300765C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653A20BEE32300765C92 /* Main.storyboard */; };
 		6AFC653E20BEE32500765C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFC653D20BEE32500765C92 /* Assets.xcassets */; };
 		6AFC654920BEE4F600765C92 /* ObjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC654820BEE4F600765C92 /* ObjectDetector.swift */; };
+		6AFC6E5B20CA97AA002EC449 /* CapturedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC6E5A20CA97AA002EC449 /* CapturedPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6AFC653D20BEE32500765C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AFC654220BEE32500765C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AFC654820BEE4F600765C92 /* ObjectDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetector.swift; sourceTree = "<group>"; };
+		6AFC6E5A20CA97AA002EC449 /* CapturedPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				6AFC653820BEE32300765C92 /* VideoViewController.swift */,
 				6A71963720CA759F007FDAF0 /* PhotoViewController.swift */,
+				6AFC6E5A20CA97AA002EC449 /* CapturedPhotoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AFC6E5B20CA97AA002EC449 /* CapturedPhotoViewController.swift in Sources */,
 				6AFC653920BEE32300765C92 /* VideoViewController.swift in Sources */,
 				6A71963820CA759F007FDAF0 /* PhotoViewController.swift in Sources */,
 				6A71963220CA72BF007FDAF0 /* GuitarClassifier.mlmodel in Sources */,
