@@ -61,7 +61,7 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         picker.dismiss(animated: true)
-        chosenPhoto.image = info[UIImagePickerControllerOriginalImage] as UIImage
+        chosenPhoto.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         performSegue(withIdentifier: "showPhoto", sender: nil)
     }
 }

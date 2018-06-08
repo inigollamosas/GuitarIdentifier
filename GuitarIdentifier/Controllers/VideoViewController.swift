@@ -32,7 +32,7 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
         return session
     }()
     
-    private var classifier = ObjectDetector()
+    private var classifier = GuitarDetector()
     
     var userDefined: [String: String] = [:]
     var labels: [String] = []
@@ -99,7 +99,7 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
         guard let observations = request.results as? [VNCoreMLFeatureValueObservation] else {
             fatalError("unexpected result type from VNCoreMLRequest")
         }
-        let indentifiedObjects = CameraViewControllerHelper.indentifyLabels(observations: observations, nmsThreshold: nmsThreshold)
+        let indentifiedObjects = ObjectDetector.indentifyLabels(observations: observations, nmsThreshold: nmsThreshold)
 
         DispatchQueue.main.async {
         self.cameraLayer.sublayers?.removeSubrange(1...)
@@ -109,7 +109,7 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
                     print("invalid detected rectangle")
                     return
                 }
-                self.cameraLayer.addSublayer(CameraViewControllerHelper.frameObject(object, self.cameraView.frame, self.labelColors[object.labelIndex], self.labels[object.labelIndex]))
+                self.cameraLayer.addSublayer(ObjectDetector.frameObject(object, self.cameraView.frame, self.labelColors[object.labelIndex], self.labels[object.labelIndex]))
             }
         }
     }

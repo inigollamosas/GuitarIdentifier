@@ -1,5 +1,5 @@
 //
-//  CameraViewControllerHelper.swift
+//  ObjectDetector.swift
 //  GuitarIdentifier
 //
 //  Created by Iñigo on 30/05/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import Vision
 
-class CameraViewControllerHelper{
+class ObjectDetector{
     
     
     struct Prediction {
@@ -100,7 +100,7 @@ class CameraViewControllerHelper{
                 for j in (i+1)..<orderedPredictions.count {
                     if keep[j] {
                         let bbox2 = orderedPredictions[j].boundingBox
-                        if CameraViewControllerHelper.IoU(bbox1, bbox2) > nmsThreshold {
+                        if ObjectDetector.IoU(bbox1, bbox2) > nmsThreshold {
                             keep[j] = false
                         }
                     }
