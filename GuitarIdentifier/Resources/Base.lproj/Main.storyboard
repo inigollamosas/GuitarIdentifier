@@ -39,7 +39,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Photo"/>
                                 <connections>
-                                    <action selector="photoPressed:" destination="gDV-j5-OWg" eventType="touchUpInside" id="m8u-RH-nR9"/>
+                                    <segue destination="yt3-f9-yN4" kind="show" identifier="" id="uQy-dQ-VU3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHG-Nr-5Su">
@@ -47,7 +47,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Video"/>
                                 <connections>
-                                    <action selector="videoPressed:" destination="gDV-j5-OWg" eventType="touchUpInside" id="xyJ-h5-i1V"/>
+                                    <segue destination="Tuu-4E-LGv" kind="show" identifier="" id="9Lg-Kf-U80"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,10 +55,6 @@
                         <viewLayoutGuide key="safeArea" id="CYc-Wj-MER"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uuz-4I-Bcg"/>
-                    <connections>
-                        <segue destination="Tuu-4E-LGv" kind="show" identifier="showVideo" id="ySO-GT-1oo"/>
-                        <segue destination="yt3-f9-yN4" kind="show" identifier="showPhoto" id="giM-Ni-Ooo"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zic-Et-Z1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
