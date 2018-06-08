@@ -103,12 +103,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Vr-hrD">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Vr-hrD">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
                                 <rect key="frame" x="149" y="700" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take photo"/>
                                 <connections>
                                     <action selector="capturePhoto:" destination="yt3-f9-yN4" eventType="touchUpInside" id="dL0-cS-z3e"/>
@@ -116,14 +118,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="qXf-Vr-hrD" firstAttribute="top" secondItem="MFq-xh-YA1" secondAttribute="bottom" id="8DJ-wD-MjM"/>
-                            <constraint firstItem="qXf-Vr-hrD" firstAttribute="trailing" secondItem="zyo-9t-WmC" secondAttribute="trailing" id="L0o-jm-bqe"/>
-                            <constraint firstItem="qXf-Vr-hrD" firstAttribute="leading" secondItem="zyo-9t-WmC" secondAttribute="leading" id="Veo-Mz-uyc"/>
-                            <constraint firstItem="aYP-yc-Bxr" firstAttribute="centerX" secondItem="28f-NI-JeB" secondAttribute="centerX" id="Xc7-Gx-oYF"/>
-                            <constraint firstItem="vc5-Fh-0cN" firstAttribute="top" secondItem="qXf-Vr-hrD" secondAttribute="bottom" id="cZE-P4-Zrv"/>
-                            <constraint firstItem="vc5-Fh-0cN" firstAttribute="top" secondItem="aYP-yc-Bxr" secondAttribute="bottom" constant="48" id="pLE-QR-1hb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zyo-9t-WmC"/>
                     </view>
                     <navigationItem key="navigationItem" id="ol1-rl-Ql4"/>
