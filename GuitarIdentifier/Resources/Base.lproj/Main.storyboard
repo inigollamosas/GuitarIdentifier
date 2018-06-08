@@ -57,7 +57,7 @@
                     <navigationItem key="navigationItem" id="Uuz-4I-Bcg"/>
                     <connections>
                         <segue destination="Tuu-4E-LGv" kind="show" identifier="showVideo" id="ySO-GT-1oo"/>
-                        <segue destination="yt3-f9-yN4" kind="show" identifier="showPhoto" id="RWF-pA-jwB"/>
+                        <segue destination="yt3-f9-yN4" kind="show" identifier="showPhoto" id="giM-Ni-Ooo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zic-Et-Z1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8EZ-4n-NqJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10706" y="191"/>
+            <point key="canvasLocation" x="-10719" y="199"/>
         </scene>
     </scenes>
 </document>

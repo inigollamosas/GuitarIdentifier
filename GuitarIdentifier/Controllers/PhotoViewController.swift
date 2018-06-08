@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController  {
     
     @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var previewView: UIView!
@@ -41,6 +41,18 @@ class PhotoViewController: UIViewController {
         sessionQueue.async { [unowned self] in
             self.configureSession()
         }
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(getPhotoFromLibraryPressed))
+        
+
+    }
+    
+    @objc func getPhotoFromLibraryPressed() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -221,6 +233,16 @@ class PhotoViewController: UIViewController {
     }
 }
 
+extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    //    MARK: - Delegate methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true)
+        capturedImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+    }
+}
+
 // MARK: - AVCapturePhotoCaptureDelegate Methods
 
 extension PhotoViewController: AVCapturePhotoCaptureDelegate {
@@ -251,3 +273,5 @@ extension PhotoViewController: AVCapturePhotoCaptureDelegate {
         self.capturedImage.image = image
     }
 }
+
+
