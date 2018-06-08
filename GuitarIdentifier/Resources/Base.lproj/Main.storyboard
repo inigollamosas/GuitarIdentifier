@@ -34,24 +34,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAy-sF-wAS">
-                                <rect key="frame" x="167" y="345" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Photo"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAy-sF-wAS">
+                                <rect key="frame" x="158" y="330" width="60" height="60"/>
+                                <state key="normal" image="imageClassifier"/>
                                 <connections>
                                     <segue destination="yt3-f9-yN4" kind="show" identifier="" id="uQy-dQ-VU3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHG-Nr-5Su">
-                                <rect key="frame" x="167" y="402" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Video"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHG-Nr-5Su">
+                                <rect key="frame" x="157" y="425" width="60" height="60"/>
+                                <state key="normal" image="objectDetector"/>
                                 <connections>
-                                    <segue destination="Tuu-4E-LGv" kind="show" identifier="" id="9Lg-Kf-U80"/>
+                                    <segue destination="PSD-o7-jxP" kind="show" id="VZ6-ZK-HeY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PHG-Nr-5Su" firstAttribute="centerX" secondItem="g5w-oU-F6B" secondAttribute="centerX" id="6MM-8u-nrf"/>
+                            <constraint firstItem="lAy-sF-wAS" firstAttribute="centerX" secondItem="g5w-oU-F6B" secondAttribute="centerX" id="JIi-Qz-s6X"/>
+                            <constraint firstItem="CYc-Wj-MER" firstAttribute="bottom" secondItem="PHG-Nr-5Su" secondAttribute="bottom" constant="293" id="d8z-2P-jad"/>
+                            <constraint firstItem="lAy-sF-wAS" firstAttribute="top" secondItem="CYc-Wj-MER" secondAttribute="top" constant="242" id="qc7-Ti-RGU"/>
+                            <constraint firstItem="PHG-Nr-5Su" firstAttribute="top" secondItem="lAy-sF-wAS" secondAttribute="bottom" constant="35" id="xvv-Uu-oP6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CYc-Wj-MER"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uuz-4I-Bcg"/>
@@ -59,37 +64,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zic-Et-Z1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-11878" y="429"/>
-        </scene>
-        <!--Video View Controller-->
-        <scene sceneID="ihG-6e-bzj">
-            <objects>
-                <viewController id="Tuu-4E-LGv" customClass="VideoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8JP-Wp-D0q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Oi-8H-i1Q">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="0Gg-fU-eFt" firstAttribute="trailing" secondItem="9Oi-8H-i1Q" secondAttribute="trailing" id="DYA-c1-p70"/>
-                            <constraint firstItem="9Oi-8H-i1Q" firstAttribute="top" secondItem="0Gg-fU-eFt" secondAttribute="top" id="Gzv-BQ-djm"/>
-                            <constraint firstItem="9Oi-8H-i1Q" firstAttribute="leading" secondItem="0Gg-fU-eFt" secondAttribute="leading" id="PDu-hI-iyp"/>
-                            <constraint firstItem="0Gg-fU-eFt" firstAttribute="bottom" secondItem="9Oi-8H-i1Q" secondAttribute="bottom" id="WnK-1q-0U6"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="0Gg-fU-eFt"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="uI6-4G-ruU"/>
-                    <connections>
-                        <outlet property="cameraView" destination="9Oi-8H-i1Q" id="kCe-bv-Kwi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b45-JQ-Qsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-10719" y="927"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="qFc-VU-8bQ">
@@ -108,7 +82,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
                                 <rect key="frame" x="137.66666666666666" y="668" width="100" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.0064332916308650345" blue="0.038555488229899515" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.12032941241934791" green="1" blue="0.97229146179572268" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="U41-w4-704"/>
                                 </constraints>
@@ -192,8 +166,44 @@
             </objects>
             <point key="canvasLocation" x="-7932" y="-38.423645320197046"/>
         </scene>
+        <!--Video View Controller-->
+        <scene sceneID="eSF-bY-Zhl">
+            <objects>
+                <viewController id="PSD-o7-jxP" customClass="VideoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="68K-0h-hsI"/>
+                        <viewControllerLayoutGuide type="bottom" id="rJ7-AF-LWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bk1-c4-ISe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQV-q5-zeS">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FQV-q5-zeS" firstAttribute="leading" secondItem="TCx-li-Ot2" secondAttribute="leading" id="7Sd-Gd-8yl"/>
+                            <constraint firstItem="FQV-q5-zeS" firstAttribute="top" secondItem="68K-0h-hsI" secondAttribute="bottom" id="8Tk-oF-M34"/>
+                            <constraint firstItem="FQV-q5-zeS" firstAttribute="trailing" secondItem="TCx-li-Ot2" secondAttribute="trailing" id="ecf-QF-tmr"/>
+                            <constraint firstItem="rJ7-AF-LWk" firstAttribute="top" secondItem="FQV-q5-zeS" secondAttribute="bottom" id="x5I-vd-mzo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TCx-li-Ot2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jNe-9d-IpG"/>
+                    <connections>
+                        <outlet property="cameraView" destination="FQV-q5-zeS" id="qXl-OZ-cr0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szJ-hJ-EM3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10604" y="695"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cameraIcon" width="60" height="60"/>
+        <image name="imageClassifier" width="60" height="60"/>
+        <image name="objectDetector" width="60" height="60"/>
     </resources>
 </document>
