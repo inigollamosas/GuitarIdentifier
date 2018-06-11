@@ -80,9 +80,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Vr-hrD">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-yc-Bxr">
                                 <rect key="frame" x="137.66666666666666" y="668" width="100" height="60"/>
-                                <color key="backgroundColor" red="0.12032941241934791" green="1" blue="0.97229146179572268" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.94117647058823528" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="U41-w4-704"/>
                                 </constraints>
@@ -141,17 +141,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="noL-Zo-TjW">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-H7-nx3">
-                                <rect key="frame" x="145" y="709" width="230" height="69"/>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-H7-nx3">
+                                <rect key="frame" x="129" y="693" width="230" height="69"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MF-Fp-i3A">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classifying..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MF-Fp-i3A">
                                         <rect key="frame" x="8" y="19" width="214" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.94117647058823528" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="4MF-Fp-i3A" firstAttribute="leading" secondItem="IAz-H7-nx3" secondAttribute="leading" constant="8" id="7Kc-nJ-gtK"/>
                                     <constraint firstAttribute="height" constant="69" id="BCp-cQ-iZp"/>
@@ -167,9 +167,9 @@
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="top" secondItem="CcP-WT-zBp" secondAttribute="top" id="4jR-Zd-Zhb"/>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="leading" secondItem="CcP-WT-zBp" secondAttribute="leading" id="BNH-wu-BEf"/>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="trailing" secondItem="CcP-WT-zBp" secondAttribute="trailing" id="HdQ-2S-Obj"/>
-                            <constraint firstItem="IAz-H7-nx3" firstAttribute="trailing" secondItem="CcP-WT-zBp" secondAttribute="trailing" id="hHO-WJ-EAj"/>
+                            <constraint firstItem="IAz-H7-nx3" firstAttribute="trailing" secondItem="CcP-WT-zBp" secondAttribute="trailing" constant="-16" id="hHO-WJ-EAj"/>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="bottom" secondItem="CcP-WT-zBp" secondAttribute="bottom" id="hwV-Rx-rYr"/>
-                            <constraint firstItem="IAz-H7-nx3" firstAttribute="bottom" secondItem="CcP-WT-zBp" secondAttribute="bottom" id="wYU-LX-jiE"/>
+                            <constraint firstItem="IAz-H7-nx3" firstAttribute="bottom" secondItem="CcP-WT-zBp" secondAttribute="bottom" constant="-16" id="wYU-LX-jiE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CcP-WT-zBp"/>
                     </view>
