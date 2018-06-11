@@ -133,7 +133,7 @@
         <!--Captured Photo View Controller-->
         <scene sceneID="5Di-0r-6p2">
             <objects>
-                <viewController storyboardIdentifier="CapturedPhotoViewController" id="BCF-Bs-AGC" customClass="CapturedPhotoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BCF-Bs-AGC" customClass="CapturedPhotoViewController" customModule="GuitarIdentifier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="30I-Qr-bZp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,13 +141,35 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="noL-Zo-TjW">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-H7-nx3">
+                                <rect key="frame" x="145" y="709" width="230" height="69"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MF-Fp-i3A">
+                                        <rect key="frame" x="8" y="19" width="214" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4MF-Fp-i3A" firstAttribute="leading" secondItem="IAz-H7-nx3" secondAttribute="leading" constant="8" id="7Kc-nJ-gtK"/>
+                                    <constraint firstAttribute="height" constant="69" id="BCp-cQ-iZp"/>
+                                    <constraint firstAttribute="trailing" secondItem="4MF-Fp-i3A" secondAttribute="trailing" constant="8" id="MkL-1C-wa3"/>
+                                    <constraint firstItem="4MF-Fp-i3A" firstAttribute="top" secondItem="IAz-H7-nx3" secondAttribute="top" constant="19" id="VLR-Ha-9B5"/>
+                                    <constraint firstAttribute="width" constant="230" id="mru-yA-gCq"/>
+                                    <constraint firstAttribute="bottom" secondItem="4MF-Fp-i3A" secondAttribute="bottom" constant="20" id="wQ9-ZB-MpV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="top" secondItem="CcP-WT-zBp" secondAttribute="top" id="4jR-Zd-Zhb"/>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="leading" secondItem="CcP-WT-zBp" secondAttribute="leading" id="BNH-wu-BEf"/>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="trailing" secondItem="CcP-WT-zBp" secondAttribute="trailing" id="HdQ-2S-Obj"/>
+                            <constraint firstItem="IAz-H7-nx3" firstAttribute="trailing" secondItem="CcP-WT-zBp" secondAttribute="trailing" id="hHO-WJ-EAj"/>
                             <constraint firstItem="noL-Zo-TjW" firstAttribute="bottom" secondItem="CcP-WT-zBp" secondAttribute="bottom" id="hwV-Rx-rYr"/>
+                            <constraint firstItem="IAz-H7-nx3" firstAttribute="bottom" secondItem="CcP-WT-zBp" secondAttribute="bottom" id="wYU-LX-jiE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CcP-WT-zBp"/>
                     </view>
@@ -160,6 +182,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="capturedPhoto" destination="noL-Zo-TjW" id="ggj-Yz-jRf"/>
+                        <outlet property="categoriesLabel" destination="4MF-Fp-i3A" id="Nbu-VR-8kX"/>
+                        <outlet property="categoriesView" destination="IAz-H7-nx3" id="Dkx-gB-1jU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O3-ex-hWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
