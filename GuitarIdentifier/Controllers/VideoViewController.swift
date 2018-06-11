@@ -18,6 +18,10 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
     
     private var requests = [VNRequest]()
     
+    let sessionQueue = DispatchQueue(label: "session queue",
+                                     attributes: [],
+                                     target: nil)
+    
     // Create a layer to display camera frames in the UIView
     private lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
     // Create an AVCaptureSession
@@ -42,7 +46,6 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         userDefined = classifier.model.modelDescription.metadata[MLModelMetadataKey.creatorDefinedKey]! as! [String : String]
         labels = userDefined["classes"]!.components(separatedBy: ",")
         for _ in labels{
@@ -52,20 +55,26 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
                                        alpha: 1.0).cgColor)
         }
         nmsThreshold = Float(userDefined["non_maximum_suppression_threshold"]!) ?? 0.5
-        cameraView?.layer.addSublayer(cameraLayer)
-        
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
-        self.captureSession.addOutput(videoOutput)
-        self.captureSession.startRunning()
         setupVision()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        cameraLayer.videoGravity = .resizeAspectFill
-        cameraLayer.frame = cameraView.bounds
-        cameraView?.layer.addSublayer(cameraLayer)
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(animated)
+        sessionQueue.async {
+            DispatchQueue.main.async { [unowned self] in
+                let videoOutput = AVCaptureVideoDataOutput()
+                videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
+                videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
+                self.captureSession.addOutput(videoOutput)
+
+                self.cameraLayer.videoGravity = .resizeAspectFill
+                self.cameraLayer.frame = self.cameraView.bounds
+                self.cameraView.layer.addSublayer(self.cameraLayer)
+                
+                self.captureSession.startRunning()
+            }
+        }
     }
     
     // Gets in once. Initialises the classifier and attaches the handler
