@@ -184,10 +184,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FQV-q5-zeS" firstAttribute="leading" secondItem="TCx-li-Ot2" secondAttribute="leading" id="7Sd-Gd-8yl"/>
-                            <constraint firstItem="FQV-q5-zeS" firstAttribute="top" secondItem="68K-0h-hsI" secondAttribute="bottom" id="8Tk-oF-M34"/>
-                            <constraint firstItem="FQV-q5-zeS" firstAttribute="trailing" secondItem="TCx-li-Ot2" secondAttribute="trailing" id="ecf-QF-tmr"/>
-                            <constraint firstItem="rJ7-AF-LWk" firstAttribute="top" secondItem="FQV-q5-zeS" secondAttribute="bottom" id="x5I-vd-mzo"/>
+                            <constraint firstItem="FQV-q5-zeS" firstAttribute="leading" secondItem="TCx-li-Ot2" secondAttribute="leading" id="7LO-pD-Foh"/>
+                            <constraint firstItem="FQV-q5-zeS" firstAttribute="top" secondItem="TCx-li-Ot2" secondAttribute="top" id="FVd-G7-ahN"/>
+                            <constraint firstItem="TCx-li-Ot2" firstAttribute="trailing" secondItem="FQV-q5-zeS" secondAttribute="trailing" id="GHB-ag-FEd"/>
+                            <constraint firstItem="TCx-li-Ot2" firstAttribute="bottom" secondItem="FQV-q5-zeS" secondAttribute="bottom" id="ctT-rf-DV6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TCx-li-Ot2"/>
                     </view>
