@@ -53,7 +53,6 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
         }
         nmsThreshold = Float(userDefined["non_maximum_suppression_threshold"]!) ?? 0.5
         cameraView?.layer.addSublayer(cameraLayer)
-        cameraLayer.frame = cameraView.bounds
         
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
@@ -61,6 +60,12 @@ class VideoViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffe
         self.captureSession.addOutput(videoOutput)
         self.captureSession.startRunning()
         setupVision()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        cameraLayer.videoGravity = .resizeAspectFill
+        cameraLayer.frame = cameraView.bounds
+        cameraView?.layer.addSublayer(cameraLayer)
     }
     
     // Gets in once. Initialises the classifier and attaches the handler
