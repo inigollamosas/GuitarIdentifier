@@ -28,7 +28,6 @@ class CapturedPhotoViewController: UIViewController{
     override func viewDidLoad() {
 
         capturedPhoto.image = photo
-        capturedPhoto.contentMode = .scaleToFill
         categoriesView.layer.cornerRadius = 10
     }
 
